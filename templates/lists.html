@@ -16,12 +16,12 @@
         </center>
         
         <div id="blacklist">
-            <form class="enterAnEmail" name="action" method="get">
+            <form class="enterAnEmail" name="add" method="post" action = "/update_black_list">
                 Blacklist <br>
                 You can add unwanted words here!
                 <br>
                 <br>
-                <input class="emailArea" type="text">
+                <input class="emailArea" type="text" name = "add">
                 <br>
                 <br>
                 <input class="scanButton" type="submit" value="Add">
@@ -29,12 +29,12 @@
         </div>
           
         <div id="whitelist">
-            <form class="enterAnEmail" name="action" method="get">
+            <form class="enterAnEmail" name="remove" method="post" action = "/update_white_list">
                 Whitelist <br>
                 You can add wanted words here!
                 <br>
                 <br>
-                <input class="emailArea" type="text">
+                <input class="emailArea" type="text" name = "remove">
                 <br>
                 <br>
                 <input class="scanButton" type="submit" value="Add">
