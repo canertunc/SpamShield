@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    </head>
+    <body id="helpBody">
+        <center class = "center-nav-bar">
+            <a class="no-decoration" id="mainMenuId" href="{{ url_for('main_menu') }}">Main Menu</a> 
+            <a class="no-decoration" id="scanId" href="{{ url_for('select_mode') }}">Select Mode</a>
+            <a class="no-decoration" id="listsId" href="{{ url_for('lists') }}">Blacklist/Whitelist</a> 
+            <a class="no-decoration" id="helpId" href="{{ url_for('help_page') }}">Help</a>>
+        </center>
+        
+        <div class="helpPage">
+            <h1>What is SpamShield?</h1>
+            <p>Spam Shield is an application that protects your inbox.</p>
+        </div>
+        <div class="helpPage">
+            <h1>How can I use SpamShield?</h1>
+            <p>Firstly, you should select a mode, then you can scan your e-mail.</p>
+        </div>
+        <div class="helpPage">
+            <h1>What is blaclist and whitelist?</h1>
+            <p>These lists are helpful lists to scan e-mails according to your preferences.</p>
+        </div>
+        <div class="helpPage">
+            <h1>Do you need further information?</h1>
+            <a href="https://www.youtube.com/" target="_blank">Visit our website.</a>
+        </div>
+    </body>
+</html>
