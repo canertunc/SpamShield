@@ -256,11 +256,10 @@ a:visited, a:active, a:focus{
 .emailArea{
     height: 200px;
     width: 500px;
-    border-radius: 15px;
-    overflow: scroll;
-    text-align: left;
-    margin: 0 auto;
-    word-break: break-all;
+    border-radius: 7px;
+    box-sizing: border-box; 
+    resize: none; 
+    overflow: auto; 
 }
 .enterAnEmail{
     color: white;

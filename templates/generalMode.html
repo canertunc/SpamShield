@@ -24,11 +24,13 @@
                 Please enter the email that you want to scan!
                 <br>
                 <br>
-                <input class="emailArea" type="text" name="email_content">
+                <textarea class="emailArea" id="email_content" name="email_content"></textarea>
                 <br>
                 <br>
                 <input class="scanButton" type="submit" value="Scan">
+                <input type="hidden" name="form_name" id="form_name" value = "general_mode">
             </form>
+
             <div>
                 <h4 class = "result_h4" readonly>{{result}}</h4>
             </div>

@@ -4,7 +4,7 @@ import spamFilter
 import csv  
 app = Flask(__name__)
 
-@app.route('/mainMenu')
+@app.route('/')
 def main_menu():
     return render_template('mainMenu.html')
 
@@ -16,6 +16,10 @@ def index():
 def select_mode():
     return render_template('selectmode.html')
 
+@app.route('/businessMode')
+def business_mode():
+    return render_template('businessMode.html')  
+
 @app.route('/lists')
 def lists():
     return render_template('lists.html')
@@ -26,11 +30,26 @@ def help_page():
 
 @app.route('/scan', methods=['POST'])
 def scan_email():
-    print(request.method)
+    form_name = request.form.get('form_name')
     email_content = request.form['email_content']
-    result = spamFilter.is_spam(email_content)
-    print(type(result))
-    return render_template('generalMode.html', result=result)  
+    
+    if(form_name == "general_mode"):
+        result = spamFilter.is_spam(email_content,"general_mode")
+        print("hello2312")
+        return render_template('generalMode.html', result=result)  
+    
+    elif(form_name == "business_mode"):
+        result = spamFilter.is_spam(email_content,"business_mode")
+        print("asfasfsafasfasfasfsaf")
+
+        return render_template('businessMode.html', result=result)  
+    else:
+        result = spamFilter.is_spam(email_content,"general_mode")
+        print("hello")
+        return render_template('generalMode.html', result=result)  
+
+
+
 
 @app.route('/update_black_list', methods=['POST'])
 def update_black_list():

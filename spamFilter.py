@@ -11,7 +11,7 @@ import warnings
 
 warnings.filterwarnings("ignore", category=UserWarning, module="bs4")
 
-def is_spam(email_content):
+def is_spam(email_content,mode):
 
     def word_control(mail, word):
         lower_mail = mail.lower()
@@ -36,7 +36,14 @@ def is_spam(email_content):
 
     if(check == False):
         def store():
-            workBookOld = openpyxl.load_workbook('DataSet.xlsx')
+            if(mode == "general_mode"):
+                workBookOld = openpyxl.load_workbook('DataSet.xlsx')
+            elif(mode == "business_mode"):
+                workBookOld = openpyxl.load_workbook('business.xlsx')
+            else:
+                workBookOld = openpyxl.load_workbook('DataSet.xlsx')
+
+
             dataSheetOld = workBookOld['Data set']
 
             xData = []  # E-posta metinlerini saklamak için liste
@@ -55,23 +62,23 @@ def is_spam(email_content):
 
             # NOT: Veriyi tamamen eğitmek için, xData ve yData'yı direkt olarak döndürebilirsiniz
             # Veriyi bu şekilde bölmek, test verileri elde etmek ve öğrenme algoritmasının F-skorunu hesaplamak içindir
-            xTrain, xTest, yTrain, yTest = train_test_split(xData, yData, test_size=0.2, random_state=0)
+            xTrain, xTest, yTrain, yTest = train_test_split(xData, yData, test_size=0.1, random_state=0)
             return xTrain, xTest, yTrain, yTest
 
-        def calcFScore(xTest, yTest, model, vectorizer):
-            # Test verilerini vektörleştirme
-            xTestMatrix = vectorizer.transform(xTest)
-            yTestMatrix = np.asarray(yTest)
+        # def calcFScore(xTest, yTest, model, vectorizer):
+        #     # Test verilerini vektörleştirme
+        #     xTestMatrix = vectorizer.transform(xTest)
+        #     yTestMatrix = np.asarray(yTest)
 
-            # Model ile sınıflandırma yapma ve karışıklık matrisi oluşturma
-            result = model.predict(xTestMatrix)
-            matrix = confusion_matrix(yTestMatrix, result)
+        #     # Model ile sınıflandırma yapma ve karışıklık matrisi oluşturma
+        #     result = model.predict(xTestMatrix)
+        #     matrix = confusion_matrix(yTestMatrix, result)
 
-            # F-skoru, hassasiyet ve duyarlılığı hesaplama
-            fScore = f1_score(yTestMatrix, result, pos_label=0)
-            precision = precision_score(yTestMatrix, result, pos_label=0)
-            recall = recall_score(yTestMatrix, result, pos_label=0)
-            return fScore, precision, recall, matrix
+        #     # F-skoru, hassasiyet ve duyarlılığı hesaplama
+        #     fScore = f1_score(yTestMatrix, result, pos_label=0)
+        #     precision = precision_score(yTestMatrix, result, pos_label=0)
+        #     recall = recall_score(yTestMatrix, result, pos_label=0)
+        #     return fScore, precision, recall, matrix
 
     # Yeni verileri test etmek için fonksiyon
         def predict(emailBody, model, vectorizer):

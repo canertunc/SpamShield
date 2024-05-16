@@ -19,19 +19,20 @@
         <h1 id="businessModeSelected">Business Mode</h1>
 
         <div id="emailText">
-            <form class="enterAnEmail" name="action" method="get">
+            <form class="enterAnEmail"  name="/scan" method="post" action="/scan">
                 Please enter the email that you want to scan!
                 <br>
                 <br>
-                <input class="emailArea" type="text">
+                <textarea class="emailArea" id="email_content" name="email_content"></textarea>
+                
                 <br>
                 <br>
                 <input class="scanButton" type="submit" value="Scan">
+                <input type="hidden" name="form_name" id="form_name" value = "business_mode">
             </form>
+
             <div>
-                <h3>Result</h1>
-                    <br>
-                <textarea class="outputTextArea" readonly>Your result will be here.</textarea>
+                <h4 class = "result_h4" readonly>{{result}}</h4>
             </div>
         </div>
         <style>
