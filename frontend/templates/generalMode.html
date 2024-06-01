@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+        
+    </head>
+    <body id="generalModeBody">
+        <center class = "center-nav-bar">
+            <a class="no-decoration" id="mainMenuId" href="{{ url_for('main_menu') }}">Main Menu</a> 
+            <a class="no-decoration" id="scanId" href="{{ url_for('select_mode') }}">Select Mode</a>
+            <a class="no-decoration" id="listsId" href="{{ url_for('lists') }}">Blacklist/Whitelist</a> 
+            <a class="no-decoration" id="helpId" href="{{ url_for('help_page') }}">Help</a>
+        </center>
+        
+
+        <h1 id="generalModeSelected">General Mode</h1>
+
+        <div id="emailText">
+            <form class="enterAnEmail" name="/scan" method="post" action="/scan">
+                Please enter the email that you want to scan!
+                <br>
+                <br>
+                <textarea class="emailArea" id="email_content" name="email_content"></textarea>
+                <br>
+                <br>
+                <input class="scanButton" type="submit" value="Scan">
+                <input type="hidden" name="form_name" id="form_name" value = "general_mode">
+            </form>
+
+            <div>
+                <h4 class = "result_h4" readonly>{{result}}</h4>
+            </div>
+        </div>
+        <style>
+        </style>
+
+
+        
+    </body>
+
+    
+</html>

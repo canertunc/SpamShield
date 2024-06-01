@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    </head>
+    <body id="listsBody">
+        <center class = "center-nav-bar">
+            <a class="no-decoration" id="mainMenuId" href="{{ url_for('main_menu') }}">Main Menu</a> 
+            <a class="no-decoration" id="scanId" href="{{ url_for('select_mode') }}">Select Mode</a>
+            <a class="no-decoration" id="listsId" href="{{ url_for('lists') }}">Blacklist/Whitelist</a> 
+            <a class="no-decoration" id="helpId" href="{{ url_for('help_page') }}">Help</a>
+        </center>
+        
+        <div id="blacklist">
+            <form class="enterAnEmail" name="add" method="post" action = "/update_black_list">
+                Blacklist <br>
+                You can add unwanted words here!
+                <br>
+                <br>
+                <input class="emailArea" type="text" name = "add">
+                <br>
+                <br>
+                <input class="scanButton" type="submit" value="Add">
+            </form>
+        </div>
+          
+        <div id="whitelist">
+            <form class="enterAnEmail" name="remove" method="post" action = "/update_white_list">
+                Whitelist <br>
+                You can add wanted words here!
+                <br>
+                <br>
+                <input class="emailArea" type="text" name = "remove">
+                <br>
+                <br>
+                <input class="scanButton" type="submit" value="Add">
+            </form> 
+        </div>
+    </body>
+</html>

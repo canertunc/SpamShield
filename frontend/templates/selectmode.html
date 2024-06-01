@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    </head>
+    <body id="selectModeBody">
+      <center class = "center-nav-bar">
+        <a class="no-decoration" id="mainMenuId" href="{{ url_for('main_menu') }}">Main Menu</a> 
+        <a class="no-decoration" id="scanId" href="{{ url_for('select_mode') }}">Select Mode</a>
+        <a class="no-decoration" id="listsId" href="{{ url_for('lists') }}">Blacklist/Whitelist</a> 
+        <a class="no-decoration" id="helpId" href="{{ url_for('help_page') }}">Help</a>
+      </center>
+        
+        <h1 id="selectModeId" class="texts">
+          <br>Please Select a Mode
+        <br></h1>
+
+        <div id="dailyModeId" class="box">
+          <p><a class="no-decoration" href="{{ url_for('daily_mode') }}">Daily Mode</a></p>  
+        </div>
+        
+        <div  id="businessModeId" class="box">
+            <p><a class="no-decoration"  href="{{ url_for('business_mode') }}">Business Mode</a></p> 
+        </div>
+        
+        <div id="commercialModeId" class="box">
+          <p><a class="no-decoration" href="{{ url_for('commercial_mode') }}">Commercial Mode</a></p> 
+        </div>
+
+        <div id="dailyP">
+          <p id="dP"><strong>Daily Mode: </strong>For your daily usage. Detect spam mails from friends!</p>
+        </div>
+
+        <div id="businessP">
+          <p id="bP"><strong>Business Mode: </strong>For your business usage! Detect spam mails at work!</p>
+        </div>
+
+        <div id="commercialP">
+          <p id="cP"><strong>Commercial Mode: </strong>For your commercial usage. Detect spam advertisement mails!</p>
+        </div>
+        
+        
+        
+        <style>
+            
+        </style>
+    </body>
+</html>
