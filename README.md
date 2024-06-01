@@ -12,6 +12,7 @@ Installation:
 
 	2- Downloading and Installing the Project Folder:
 		-Clone this repository or download it as a zip file.
+  		-Then copy these files into an empty project folder.
 		-Navigate to the project folder in your terminal or command prompt.
 	
 	3- Frontend Installation:
