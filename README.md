@@ -62,5 +62,5 @@
 		https://github.com/ibrahimbinbuga
 		https://github.com/muratakdere
 	Email: canertunc982@gmail.com
-	More Details About the Project: [SpamShield Project Details](https://muratakdere.github.io/SpamShield/)
+	More Details About the Project: https://muratakdere.github.io/SpamShield/
 
