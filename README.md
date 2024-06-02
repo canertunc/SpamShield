@@ -52,7 +52,13 @@ License:
 
 
 Contact:
-
-	GitHub: https://github.com/canertunc
+	Team: Team 5
+	GitHubs:
+ 		- https://github.com/canertunc
+   		- https://github.com/cemregonenc
+     		- https://github.com/fethiyesari
+       		- https://github.com/Halilakca17
+	 	- https://github.com/ibrahimbinbuga
+   		- https://github.com/muratakdere
 	Email: canertunc982@gmail.com
 	More Detail About Project: https://muratakdere.github.io/SpamShield/
