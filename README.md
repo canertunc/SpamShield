@@ -1,10 +1,10 @@
-SpamShield
+## SpamShield
 
 
-Project Description:
+## Project Description:
 	"SpamShield" is an application that protects users' email inboxes from spam emails.
 
-Installation:
+## Installation:
 
 	1- Installation of Required Software:
 		Node.js (https://nodejs.org/en  - version 20.12.2)
@@ -33,7 +33,7 @@ Installation:
 			* "pip install nltk==3.8.1"
 			* "pip install openpyxl==3.1.2"
 
-Usage:
+## Usage:
 
 	Starting the Application:
 		-Navigate to the backend folder using the command "cd backend" in your terminal or command prompt.
@@ -46,25 +46,25 @@ Usage:
 		-By adding a word to the blacklist, if that word is encountered in future emails, you will receive a direct spam response.
 		-By adding a word to the whitelist, if future emails are marked as spam and it is due to that word, the word will be ignored.
 
-License:
+## License:
 
 	This project is licensed under the MIT License. See the LICENSE file for more information.
 
 
 ## Contact
 
-**Team 5**
+	**Team 5**
 
-| GitHub Profiles                                                              |
-| ------------------------------------------------------------------------------ |
-| [canertunc](https://github.com/canertunc)                                      |
-| [cemregonenc](https://github.com/cemregonenc)                                  |
-| [fethiyesari](https://github.com/fethiyesari)                                  |
-| [Halilakca17](https://github.com/Halilakca17)                                  |
-| [ibrahimbinbuga](https://github.com/ibrahimbinbuga)                            |
-| [muratakdere](https://github.com/muratakdere)                                  |
+	| GitHub Profiles                                                              |
+	| ------------------------------------------------------------------------------ |
+	| [canertunc](https://github.com/canertunc)                                      |
+	| [cemregonenc](https://github.com/cemregonenc)                                  |
+	| [fethiyesari](https://github.com/fethiyesari)                                  |
+	| [Halilakca17](https://github.com/Halilakca17)                                  |
+	| [ibrahimbinbuga](https://github.com/ibrahimbinbuga)                            |
+	| [muratakdere](https://github.com/muratakdere)                                  |
 
-**Email:** [canertunc982@gmail.com](mailto:canertunc982@gmail.com)
+	Email: [canertunc982@gmail.com](mailto:canertunc982@gmail.com)
 
-**More Details About the Project:** [SpamShield Project Details](https://muratakdere.github.io/SpamShield/)
+	More Details About the Project: [SpamShield Project Details](https://muratakdere.github.io/SpamShield/)
 
