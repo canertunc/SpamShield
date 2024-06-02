@@ -54,17 +54,13 @@
 ## Contact
 
 	Team: Team 5
-
-	| GitHub Profiles                                                              |
-	| ------------------------------------------------------------------------------ |
-	| [canertunc](https://github.com/canertunc)                                      |
-	| [cemregonenc](https://github.com/cemregonenc)                                  |
-	| [fethiyesari](https://github.com/fethiyesari)                                  |
-	| [Halilakca17](https://github.com/Halilakca17)                                  |
-	| [ibrahimbinbuga](https://github.com/ibrahimbinbuga)                            |
-	| [muratakdere](https://github.com/muratakdere)                                  |
-
-	Email: [canertunc982@gmail.com](mailto:canertunc982@gmail.com)
-
+	GitHub Profiles:                                                            
+		https://github.com/canertunc                               
+		https://github.com/cemregonenc
+		https://github.com/fethiyesari
+		https://github.com/Halilakca17
+		https://github.com/ibrahimbinbuga
+		https://github.com/muratakdere
+	Email: canertunc982@gmail.com
 	More Details About the Project: [SpamShield Project Details](https://muratakdere.github.io/SpamShield/)
 
