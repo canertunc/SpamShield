@@ -1,66 +1,163 @@
-## SpamShield
+# SpamShield - Advanced Email Spam Detection System
+
+SpamShield is a sophisticated email spam detection system that uses machine learning and rule-based approaches to identify unwanted emails. The system offers multiple detection modes tailored for different use cases, making it highly versatile for various email filtering needs.
+
+## 🌟 Features
+
+- **Multiple Detection Modes:**
+  - General Mode: Standard spam detection for everyday use
+  - Business Mode: Specialized for business communications
+  - Commercial Mode: Focused on commercial email filtering
+  - Daily Mode: Optimized for personal daily communications
+
+- **Smart Detection System:**
+  - Machine Learning based classification using Linear SVC
+  - TF-IDF vectorization for text analysis
+  - Custom black and white list management
+  - Word weight-based scoring system
+
+- **User-Friendly Interface:**
+  - Clean and intuitive web interface
+  - Real-time email scanning
+  - Easy list management for black and white lists
+  - Detailed feedback on detection results
+
+## 🔧 Technical Architecture
+
+### Backend (`/backend`)
+- **`app.py`**: Flask application serving as the main backend server
+- **`spamFilter.py`**: Core spam detection logic implementing ML algorithms
+- **`cleanText.py`**: Text preprocessing and cleaning utilities
+- **`datasets/`**: Contains training data and word lists
+  - Black list and white list management
+  - Mode-specific training datasets
+
+### Frontend (`/frontend`)
+- **`templates/`**: HTML templates for different views
+- **`static/`**: Static assets (CSS, JavaScript, images)
+
+## 🛠️ Technology Stack
+
+- **Backend:**
+  - Python 3.x
+  - Flask (Web Framework)
+  - scikit-learn (Machine Learning)
+  - pandas & numpy (Data Processing)
+  - openpyxl (Excel Data Handling)
+
+- **Frontend:**
+  - HTML5
+  - CSS3
+  - JavaScript
+  - Bootstrap (Responsive Design)
+
+## 📋 Prerequisites
+
+- Python 3.x
+- pip (Python Package Manager)
+- Required Python packages:
+  ```
+  flask
+  scikit-learn
+  pandas
+  numpy
+  openpyxl
+  ```
+
+## 🚀 Installation & Setup
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/SpamShield.git
+   cd SpamShield
+   ```
+
+2. Install required packages:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. Run the application:
+   ```bash
+   python backend/app.py
+   ```
+
+## 💡 Usage
+
+1. **Select Detection Mode:**
+   - Choose from General, Business, Commercial, or Daily mode based on your needs
+
+2. **Scan Email:**
+   - Paste the email content into the text area
+   - Click "Scan" to analyze the content
+   - Review the detailed detection results
+
+3. **Manage Lists:**
+   - Add words to the black list for automatic spam detection
+   - Add words to the white list to prevent false positives
+   - Access list management through the Lists menu
+
+## 🔍 How It Works
+
+1. **Text Preprocessing:**
+   - Email content is cleaned and normalized
+   - Text is vectorized using TF-IDF
+
+2. **Detection Process:**
+   - Checks against black and white lists
+   - Applies machine learning model (Linear SVC)
+   - Calculates word weights and scores
+   - Provides detailed detection reasoning
+
+3. **Mode-Specific Processing:**
+   - Each mode uses specialized datasets and parameters
+   - Custom weight adjustments per mode
+   - Mode-specific word lists and thresholds
+
+## ⚖️ Black List and White List System
+
+One of SpamShield's most powerful features is its customizable black list and white list system.
+
+### Black List:
+- **Purpose**: Contains words that should definitely be marked as spam
+- **How it Works**:
+  - When a word is added to the black list, it is assigned a weight value of +100
+  - If an email contains any word from the black list, it is automatically marked as spam
+  - This allows users to define their own spam criteria
+  - Example: Specific advertising terms or unwanted sender addresses
+
+### White List:
+- **Purpose**: Contains trusted words that should never be marked as spam
+- **How it Works**:
+  - When a word is added to the white list, it is assigned a weight value of -100
+  - If an email is marked as spam and this is solely due to a word in the white list, the email will not be marked as spam
+  - This helps prevent false positives
+  - Example: Domain names of trusted business partners or important business terms
+
+### List Management:
+- Both lists can be dynamically updated
+- Lists are stored in CSV format for easy management
+- A word cannot be in both the black list and white list simultaneously
+- When a word is added to one list, it is automatically removed from the other
+
+### Recommended Usage:
+1. **For Black List**:
+   - Common words in recurring spam emails
+   - Domain names of known spam senders
+   - Unwanted product or service terms
+
+2. **For White List**:
+   - Domain names of business partners
+   - Important customer names
+   - Internal company terms
+   - Frequently used business terminology
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 
-## Project Description:
-	"SpamShield" is an application that protects users' email inboxes from spam emails.
+---
 
-## Installation:
-
-	1- Installation of Required Software:
-		Node.js (https://nodejs.org/en  - version 20.12.2)
-		Python (https://www.python.org/ - version 3.10.5)
-
-	2- Downloading and Installing the Project Folder:
-		-Clone this repository or download it as a zip file.
-  		-Then copy these files into an empty project folder.
-		-Navigate to the project folder in your terminal or command prompt.
-	
-	3- Frontend Installation:
-		-Navigate to the frontend folder using the command "cd frontend" in your terminal or command prompt.
-		-Then, run the command "npm install electron@30.0.5" to install the Electron.js framework.
-	
-	4- Backend Installation:
-		-Navigate to the backend folder using the command "cd backend" in your terminal or command prompt.
-		-Then, run the command "pip install Flask == 3.0.3" to install the Flask framework.
-	
-	5- Installation of Main Module:
-		-Navigate to the backend folder using the command "cd backend" in your terminal or command prompt.
-		-Then, run the following commands one by one to install the required libraries:
-			* "pip install beautifulsoup4==4.11.1"
-			* "pip install numpy==1.23.2"
-			* "pip install pandas==1.5.0"
-			* "pip install scikit-learn==1.2.2"
-			* "pip install nltk==3.8.1"
-			* "pip install openpyxl==3.1.2"
-
-## Usage:
-
-	Starting the Application:
-		-Navigate to the backend folder using the command "cd backend" in your terminal or command prompt.
-		-Run the command "python app.py" to start the application.
-		-Then, open the URL link shown in the console in your web browser. (http://127.0.0.1:5000)
-	
-	Using the Application:
-		-When the application opens, you can run your email in the appropriate mode.
-		-If you are unsure which mode to choose, you can select the general mode.
-		-By adding a word to the blacklist, if that word is encountered in future emails, you will receive a direct spam response.
-		-By adding a word to the whitelist, if future emails are marked as spam and it is due to that word, the word will be ignored.
-
-## License:
-
-	This project is licensed under the MIT License. See the LICENSE file for more information.
-
-
-## Contact
-
-	Team: Team 5
-	GitHub Profiles:                                                            
-		https://github.com/canertunc                               
-		https://github.com/cemregonenc
-		https://github.com/fethiyesari
-		https://github.com/Halilakca17
-		https://github.com/ibrahimbinbuga
-		https://github.com/muratakdere
-	Email: canertunc982@gmail.com
-	More Details About the Project: https://muratakdere.github.io/SpamShield/
+**Note:** Keep your black and white lists updated regularly for optimal detection results.
 
