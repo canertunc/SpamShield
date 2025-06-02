@@ -68,7 +68,7 @@ SpamShield is a sophisticated email spam detection system that uses machine lear
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/SpamShield.git
+   git clone https://github.com/canertunc/SpamShield.git
    cd SpamShield
    ```
 
